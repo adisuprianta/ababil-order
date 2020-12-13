@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Katalog;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $katalog = Katalog::where('id_paket','!=','2')->get();
+        $custom = Katalog::where('id_paket','2')->first();
+        return view('user/welcome',compact('katalog','custom'));
     }
 }

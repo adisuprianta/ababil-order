@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public $timestamps = true;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -55,7 +57,7 @@ class User extends Authenticatable
     }
 
     //Relation User to Santri
-    public function santri(){
-        return $this->hasOne('App\Models\Pelanggan', 'id_user');
+    public function pelanggan(){
+        return $this->hasOne('App\Models\Pelanggan', 'id');
     }
 }

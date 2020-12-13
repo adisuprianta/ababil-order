@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class JenisJahit extends Model
 {
+    public $timestamps = true;
     protected $table = 'jenis_jahit';
 
     protected $primaryKey = 'id_jahit';
@@ -20,7 +21,11 @@ class JenisJahit extends Model
         return $this->hasMany('App\Models\CustomPrint','id_jahit');
     }
 
-    public function detailPesan(){
+    public function ukuran(){
+        return $this->hasMany('App\Models\Ukuran','id_jahit');
+    }
+
+    public function detailPesanan(){
         return $this->hasMany('App\Models\DetailPesanan','id_jahit');
     }
 

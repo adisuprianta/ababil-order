@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SisiPrint extends Model
 {
+    public $timestamps = true;
     protected $table = 'sisi_print';
 
     protected $primaryKey = 'id_print';
@@ -14,7 +15,7 @@ class SisiPrint extends Model
         'keterangan_print'
     ];
 
-    public function pesanan(){
+    public function detailPesanan(){
         return $this->hasMany('App\Models\DetailPesanan','id_print');
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pembayaran extends Model
 {
+    public $timestamps = true;
     protected $table ='pembayaran';
 
     protected $primaryKey = 'id_pembayaran';
@@ -20,6 +21,6 @@ class Pembayaran extends Model
     ];
 
     public function pesanan(){
-        return $this->belongsTo('App\Models\Pesanan','id_pesanan');
+        return $this->hasOne('App\Models\Pesanan','id_pesanan','id_pembayaran');
     }
 }

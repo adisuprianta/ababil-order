@@ -15,12 +15,13 @@ class CreatePelangganTable extends Migration
     {
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->increments('id_pelanggan');
-            $table->integer('id')->unsigned();
+            $table->integer('id')->nullable()->unsigned();
             $table->integer('id_provinsi')->nullable()->unsigned();
             $table->integer('id_kota')->nullable()->unsigned();
             $table->string('nama_lengkap',100);
             $table->date('tanggal_lahir');
             $table->string('alamat_lengkap',200);
+            $table->integer('kode_pos')->unsigned();
             $table->string('no_hp',15);
             $table->string('email',50);
             $table->timestamps();

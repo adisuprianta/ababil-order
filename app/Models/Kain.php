@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kain extends Model
 {
+    public $timestamps = true;
     protected $table = 'kain';
 
     protected $primaryKey = 'id_kain';
@@ -16,6 +17,6 @@ class Kain extends Model
     ];
 
     public function pesanan(){
-        return $this->hasMany('App\Models\DetailPesanan','id_kain');
+        return $this->hasMany('App\Models\Pesanan','id_kain');
     }
 }

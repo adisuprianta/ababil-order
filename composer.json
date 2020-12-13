@@ -9,7 +9,9 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "barryvdh/laravel-dompdf": "^0.8.7",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^7.2",
         "kavist/rajaongkir": "^1.1",
         "laravel/framework": "^6.18.35",
         "laravel/tinker": "^2.0",
@@ -34,6 +36,9 @@
         }
     },
     "autoload": {
+        "files": [
+            "app/helpers.php"
+        ],
         "psr-4": {
             "App\\": "app/"
         },
